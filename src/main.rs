@@ -29,19 +29,19 @@ fn main() {
             }
             _ => {
                 lyrics += &gifts[day - 1];
-                lyrics.push_str(", \n");
+                lyrics += ", \n";
 
-                for gift in (1..day).rev() {
+                for gift in (1..=day).rev() {
                     if gift == 1 {
-                        lyrics.push_str("and ");
+                        lyrics += "and ";
                     }
-                    lyrics.push_str(&gifts[gift - 1]);
-                    lyrics.push_str(",\n");
+                    lyrics += &gifts[gift - 1];
+                    lyrics += ",\n";
                 }
             }
         }
 
-        lyrics.push_str("\n");
+        lyrics += "\n";
     }
 
     println!("{lyrics}");
