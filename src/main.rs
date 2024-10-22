@@ -28,9 +28,6 @@ fn main() {
                 lyrics += &gifts[0];
             }
             _ => {
-                lyrics += &gifts[day - 1];
-                lyrics += ", \n";
-
                 for gift in (1..=day).rev() {
                     if gift == 1 {
                         lyrics += "and ";
